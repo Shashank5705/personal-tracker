@@ -1,0 +1,20 @@
+.quest-component-wrapper {
+  background-color: rgb(196, 192, 147);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.quest-component-title {
+  font-family: roboto;
+}
+
+.quest-component-description {
+  font-family: roboto;
+}

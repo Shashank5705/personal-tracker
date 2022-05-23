@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const ADD_PROFILE = gql`
   mutation addProfile($name: String!, $email: String!, $password: String!) {
@@ -40,6 +40,51 @@ export const REMOVE_SKILL = gql`
       _id
       name
       skills
+    }
+  }
+`;
+
+export const INCREMENT_COUNTER_SOBER = gql`
+  mutation incrementDaysSober {
+    incrementDaysSober {
+      _id
+      name
+      email
+      userLevel
+      daysFromStart
+      daysSober
+      timesRelapsed
+      questsCompleted
+    }
+  }
+`;
+
+export const INCREMENT_TIMES_RELAPSED = gql`
+  mutation incrementTimesRelapsed {
+    incrementTimesRelapsed {
+      _id
+      name
+      email
+      userLevel
+      daysFromStart
+      daysSober
+      timesRelapsed
+      questsCompleted
+    }
+  }
+`;
+
+export const COMPLETE_QUEST = gql`
+  mutation CompleteQuest($questId: ID!) {
+    completeQuest(questId: $questId) {
+      _id
+      name
+      email
+      userLevel
+      daysFromStart
+      daysSober
+      timesRelapsed
+      questsCompleted
     }
   }
 `;

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Exercise",
+    "description": "Do 10 pushups",
+    "questLevel": "1"
+  },
+  {
+    "name": "Cold Shower",
+    "description": "Take a cold shower",
+    "questLevel": "1"
+  },
+  {
+    "name": "Cook",
+    "description": "Cook a healthy meal",
+    "questLevel": "1"
+  },
+  {
+    "name": "Exercise",
+    "description": "Go for a walk",
+    "questLevel": "1"
+  },
+  {
+    "name": "Sleep",
+    "description": "Go for a walk",
+    "questLevel": "1"
+  }
+]

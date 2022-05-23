@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
@@ -16,10 +16,10 @@ const ProfileList = ({ profiles, title }) => {
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.skills ? profile.skills.length : 0}{' '}
+                  <span className="text-white" style={{ fontSize: "1rem" }}>
+                    currently has {profile.skills ? profile.skills.length : 0}{" "}
                     endorsed skill
-                    {profile.skills && profile.skills.length === 1 ? '' : 's'}
+                    {profile.skills && profile.skills.length === 1 ? "" : "s"}
                   </span>
                 </h4>
 
