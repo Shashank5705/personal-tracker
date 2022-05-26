@@ -9,8 +9,6 @@ import { QUERY_TODAYS_QUESTS } from "../../utils/queries";
 // import { QUERY_QUEST } from "../../utils/queries";
 
 function Quest({ quest, fetchTodaysQuest }) {
-  console.log("ASSSDDD", quest);
-
   const [completeQuest, { error }] = useMutation(COMPLETE_QUEST, {
     variables: {
       questId: quest._id,
@@ -20,8 +18,6 @@ function Quest({ quest, fetchTodaysQuest }) {
       "todaysQuests", // Query name
     ],
   });
-
-  console.log("ERRORR", error);
 
   const handleClick = async () => {
     // call the complete quest mutation

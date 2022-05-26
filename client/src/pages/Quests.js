@@ -3,13 +3,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
+import Button from "@mui/material/Button";
+
 import Quest from "../components/Quest";
-import { quests } from "../data";
 import { QUERY_QUEST } from "../utils/queries";
 import QuestList from "../components/QuestList";
 // import { Quest } from "../../../server/models";
 
-// import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { profileId } = useParams();
@@ -21,18 +22,25 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  //   if (!profile?.name) {
-  //     return (
-  //       <h4>
-  //         You need to be logged in to see your profile page. Use the navigation
-  //         links above to sign up or log in!
-  //       </h4>
-  //     );
-  //   }
+  const isLoggedIn = Auth.loggedIn();
+
+  if (!isLoggedIn) {
+    return (
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+    );
+  }
 
   return (
-    <div>
+    <div className="quest-page-wrapper">
       <h2 className="card-header mt-4 quest-page-header">Daily Quests</h2>
+      <div className="quest-page-button-wrapper">
+        <Button className="quest-page-button" variant="contained" size="small">
+          Generate Today's Quests
+        </Button>
+      </div>
       <div className="quest-page-wrapper">
         <QuestList />
       </div>

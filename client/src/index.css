@@ -1753,7 +1753,17 @@ body {
   align-items: center;
 }
 
-.quest-page-wrapper {
+.quest-page-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.quest-page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*==================== STATS PAGE CSS ====================*/

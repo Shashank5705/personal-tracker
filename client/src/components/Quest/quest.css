@@ -1,6 +1,6 @@
 .quest-component-wrapper {
-  background-color: rgb(196, 192, 147);
-  color: black;
+  background-color: rgb(115, 199, 94);
+  color: rgb(7, 51, 10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,7 @@
   border-radius: 25px;
   margin-bottom: 25px;
   margin-top: 25px;
+  width: 500px;
 }
 
 .quest-component-title {

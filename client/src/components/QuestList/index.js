@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { QUERY_TODAYS_QUESTS } from "../../utils/queries";
 import Quest from "../Quest";
+import "./questList.css";
 
 export default function QuestList() {
   const {
@@ -11,9 +12,9 @@ export default function QuestList() {
   } = useQuery(QUERY_TODAYS_QUESTS); // todays quest
 
   return (
-    <div>
+    <div className="quest-list-wrapper">
       {data?.todaysQuests && (
-        <>
+        <div className="quest-list-wrapper">
           {data.todaysQuests.map((quest) => {
             return (
               <Quest
@@ -23,7 +24,7 @@ export default function QuestList() {
               ></Quest>
             );
           })}
-        </>
+        </div>
       )}
     </div>
   );

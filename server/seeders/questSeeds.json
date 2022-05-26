@@ -5,12 +5,12 @@
     "questLevel": "1"
   },
   {
-    "name": "Cold Shower",
+    "name": "Health",
     "description": "Take a cold shower",
     "questLevel": "1"
   },
   {
-    "name": "Cook",
+    "name": "Food",
     "description": "Cook a healthy meal",
     "questLevel": "1"
   },
@@ -21,7 +21,37 @@
   },
   {
     "name": "Sleep",
-    "description": "Go for a walk",
+    "description": "Go to bed before 10pm",
+    "questLevel": "1"
+  },
+  {
+    "name": "Relationships",
+    "description": "Call a friend",
+    "questLevel": "1"
+  },
+  {
+    "name": "Health",
+    "description": "Drink 3 litres of water",
+    "questLevel": "1"
+  },
+  {
+    "name": "Tech",
+    "description": "Spend two hours offline",
+    "questLevel": "1"
+  },
+  {
+    "name": "Learn",
+    "description": "Read 10 pages of a book",
+    "questLevel": "1"
+  },
+  {
+    "name": "Experience",
+    "description": "Try something new",
+    "questLevel": "1"
+  },
+  {
+    "name": "Mental",
+    "description": "Meditate for 20 minutes",
     "questLevel": "1"
   }
 ]

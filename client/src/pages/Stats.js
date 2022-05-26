@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import Button from "@mui/material/Button";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -10,10 +11,9 @@ import {
 } from "../utils/mutations";
 import { gql, useMutation } from "@apollo/client";
 
-const Profile = () => {
-  const { profileId } = useParams();
+import Auth from "../utils/auth";
 
-  // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
+const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
 
   /*==================== MODAL ====================*/
@@ -47,17 +47,16 @@ const Profile = () => {
 
   /*==================== LOGGED IN CONDITION ====================*/
 
-  // NEED CONDITION STATEMENT IF USER IS NOT LOGGED IN TO SEND THEM TO LOGIN PAGE
+  const isLoggedIn = Auth.loggedIn();
 
-  //   THIS DOESNT WORK!!
-  //   if (!data.me.name) {
-  //     return (
-  //       <h4>
-  //         You need to be logged in to see your profile page. Use the navigation
-  //         links above to sign up or log in!
-  //       </h4>
-  //     );
-  //   }
+  if (!isLoggedIn) {
+    return (
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+    );
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -77,7 +76,9 @@ const Profile = () => {
           <h3>{data.me.timesRelapsed} Days Strayed from the Path</h3>
           <h3>{data.me.questsCompleted} Quests Completed </h3>
         </div>
-        <button onClick={openModal}>Check In</button>
+        <Button onClick={openModal} variant="contained">
+          Check In
+        </Button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
