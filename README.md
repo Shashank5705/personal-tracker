@@ -5,7 +5,8 @@
 ## Description
 
 ```
-A MERN stack application to track and encourage personal development, 'The Path' aims to give you some direction to improve your physical and mental health.
+A MERN stack application to track and encourage personal development,
+'The Path' aims to give you some direction to improve your physical and mental health.
 ```
 
 ## Built With
