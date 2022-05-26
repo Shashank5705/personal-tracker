@@ -7,7 +7,7 @@ const completedQuestSchema = new Schema({
   },
   profileId: {
     type: Schema.Types.ObjectId,
-    required: true,
+    ref: "Profile",
   },
   completedAt: {
     type: Date,

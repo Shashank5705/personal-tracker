@@ -10,11 +10,28 @@ import {
   INCREMENT_TIMES_RELAPSED,
 } from "../utils/mutations";
 import { gql, useMutation } from "@apollo/client";
+import { createTheme } from "@mui/material/styles";
 
 import Auth from "../utils/auth";
 
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#1b5e20",
+      },
+      secondary: {
+        main: "#4caf50",
+      },
+    },
+    Button: {
+      "&hover": {
+        background: "#1b5e20",
+      },
+    },
+  });
 
   /*==================== MODAL ====================*/
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -51,10 +68,12 @@ const Profile = () => {
 
   if (!isLoggedIn) {
     return (
-      <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
-      </h4>
+      <div className="logged-warning-div">
+        <h4 className="logged-warning">
+          You need to be logged in to see your profile page. Use the navigation
+          links above to sign up or log in!
+        </h4>
+      </div>
     );
   }
 
@@ -70,13 +89,31 @@ const Profile = () => {
         </h2>
 
         <div className="stats-page-data">
-          <h3>Level {data.me.userLevel}</h3>
-          <h3>{data.me.daysFromStart} Days From Start</h3>
-          <h3>{data.me.daysSober} Days Walked the Path </h3>
-          <h3>{data.me.timesRelapsed} Days Strayed from the Path</h3>
-          <h3>{data.me.questsCompleted} Quests Completed </h3>
+          <h3 className="stats-page-text">Level {data.me.userLevel}</h3>
+          <h3 className="stats-page-text">
+            {data.me.daysFromStart} Days From Start
+          </h3>
+          <h3 className="stats-page-text">
+            {data.me.daysSober} Days Walked the Path{" "}
+          </h3>
+          <h3 className="stats-page-text">
+            {data.me.timesRelapsed} Days Strayed from the Path
+          </h3>
+          <h3 className="stats-page-text">
+            {data.me.questsCompleted} Quests Completed{" "}
+          </h3>
         </div>
-        <Button onClick={openModal} variant="contained">
+        <Button
+          onClick={openModal}
+          variant="contained"
+          className="stats-page-open-modal-button"
+          sx={{
+            bgcolor: "#4ad66d",
+            "&:hover": {
+              bgcolor: "success.main",
+            },
+          }}
+        >
           Check In
         </Button>
         <Modal

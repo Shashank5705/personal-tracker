@@ -1027,15 +1027,6 @@ a:hover {
   background-color: #ee8294;
 }
 
-.btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
-}
-
-.btn.btn-info:hover {
-  background-color: #31e1bd;
-}
-
 .btn.btn-light {
   background-color: #d9e9e8;
   color: #1a1a1a;
@@ -1716,6 +1707,7 @@ body {
   margin-top: 4%;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .home-left {
@@ -1753,6 +1745,10 @@ body {
   align-items: center;
 }
 
+.quest-page-wrapper {
+  width: 100%;
+}
+
 .quest-page-button-wrapper {
   display: flex;
   justify-content: center;
@@ -1778,6 +1774,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.stats-page-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .stats-page-modal {
@@ -1814,11 +1815,53 @@ body {
   display: block;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 .stats-page-modal-button:hover {
   background-color: #247638;
 }
 
-/* .stats-page-modal-overlay {
-  background-color: #1b89bc;
-} */
+/*==================== IF USER IS NOT LOGGED IN WARNING ====================*/
+
+.logged-warning-div1 {
+  align-items: center;
+  justify-content: center;
+}
+
+.logged-warning {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+/*==================== MOBILE RESPONSIVENESS ====================*/
+
+@media screen and (max-width: 480px) {
+  /*==================== HOMEPAGE CSS ====================*/
+  .home-left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 1000px) {
+  /*==================== HOMEPAGE CSS ====================*/
+  .home-container {
+    justify-content: center;
+  }
+
+  .home-left {
+    flex-basis: 100%;
+  }
+
+  .home-img {
+    margin-bottom: 20px;
+  }
+
+  .home-right {
+    flex-basis: 100%;
+  }
+  /*==================== QUESTS PAGE CSS ====================*/
+}

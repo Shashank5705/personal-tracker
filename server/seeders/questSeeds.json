@@ -40,7 +40,7 @@
     "questLevel": "1"
   },
   {
-    "name": "Learn",
+    "name": "Mental",
     "description": "Read 10 pages of a book",
     "questLevel": "1"
   },
@@ -52,6 +52,16 @@
   {
     "name": "Mental",
     "description": "Meditate for 20 minutes",
+    "questLevel": "1"
+  },
+  {
+    "name": "Mental",
+    "description": "Think of one thing you're grateful for",
+    "questLevel": "1"
+  },
+  {
+    "name": "Mental",
+    "description": "Think of one thing you're grateful for",
     "questLevel": "1"
   }
 ]

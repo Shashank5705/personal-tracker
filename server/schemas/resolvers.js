@@ -23,23 +23,24 @@ const resolvers = {
         throw new AuthenticationError();
       }
 
-      //! BUG:  QUESTS COMPLETE FOR ALL USERS WHEN THEY SHOULD BE PERSONAL
-
       // get the current logged user quest,
       //! BUG:  AGGREGATE LOADS MORE QUESTS EVERY REFRESH AND DOESN'T KEEP THE SAME QUESTS FOR THE DAY
-      // can use await Quest.aggregate
-      const quests = await Quest.find(
-        {}
-        //     [
-        //   { $sample: { size: 4 } },
-        //     { $out: { db: "tech-friends", coll: "todays-quest-collection" } },
-        //     ]
+      // change to use await Quest.aggregate
+      const quests = await Quest.aggregate(
+        //   {}
+        [
+          { $sample: { size: 4 } },
+          //  { $out: { db: "tech-friends", coll: "todays-quest-collection" } },
+        ]
       );
 
+      // declare midnight today as 00:00
       const midnightToday = dayjs().startOf("date");
+      // declare midnight tomorrow as 23:59
       const midnightTomorrow = midnightToday.add(1, "day");
+
       const completedQuestsForToday = await CompletedQuest.find({
-        userId: context.user._id,
+        profileId: context.user._id,
         completedAt: { $gte: midnightToday, $lte: midnightTomorrow },
       });
 
@@ -50,7 +51,7 @@ const resolvers = {
       // filter out completed quest
       // send back
       return quests.filter((quest) => {
-        // exclude if quest._id matches with com
+        // exclude if quest._id matches with completed
         return !completedQuestIdsForToday.includes(quest._id.toString());
       });
     },
@@ -121,11 +122,18 @@ const resolvers = {
       }
 
       // create a new quest completed entry
-      await CompletedQuest.create({
+      // await CompletedQuest.create({
+      //   questId: questId,
+      //   profileId: context.user._id,
+      //   completedAt: new Date(),
+      // });
+
+      const compQuest = new CompletedQuest({
         questId: questId,
         profileId: context.user._id,
         completedAt: new Date(),
       });
+      await compQuest.save();
 
       return await Profile.findOneAndUpdate(
         { _id: context.user._id },

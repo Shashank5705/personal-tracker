@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./footer.css";
 
 const Footer = () => {
   const location = useLocation();
@@ -12,7 +13,17 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>&copy; {new Date().getFullYear()} - Made with love by Wratten</h4>
+        <h4>
+          &copy; {new Date().getFullYear()} - Made with love by{" "}
+          <a
+            className="footer-link"
+            href="https://github.com/Wratten"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Wratten
+          </a>
+        </h4>
       </div>
     </footer>
   );

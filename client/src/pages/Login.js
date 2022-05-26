@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+import Button from "@mui/material/Button";
 
 import Auth from "../utils/auth";
 
@@ -69,13 +70,20 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
+                <Button
+                  variant="contained"
                   className="btn btn-block btn-info"
                   style={{ cursor: "pointer" }}
                   type="submit"
+                  sx={{
+                    bgcolor: "success.main",
+                    "&:hover": {
+                      bgcolor: "success.dark",
+                    },
+                  }}
                 >
                   Submit
-                </button>
+                </Button>
               </form>
             )}
 

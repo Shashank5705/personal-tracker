@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
@@ -77,13 +78,20 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
+                <Button
+                  variant="contained"
                   className="btn btn-block btn-info"
                   style={{ cursor: "pointer" }}
                   type="submit"
+                  sx={{
+                    bgcolor: "success.main",
+                    "&:hover": {
+                      bgcolor: "success.dark",
+                    },
+                  }}
                 >
                   Submit
-                </button>
+                </Button>
               </form>
             )}
 

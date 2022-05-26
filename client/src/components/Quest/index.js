@@ -37,7 +37,13 @@ function Quest({ quest, fetchTodaysQuest }) {
         className="quest-component-button"
         variant="contained"
         size="small"
-        sx={{ color: "sucess.main" }}
+        sx={{
+          bgcolor: "#4ad66d",
+
+          "&:hover": {
+            bgcolor: "success.main",
+          },
+        }}
         onClick={handleClick}
       >
         Complete Quest

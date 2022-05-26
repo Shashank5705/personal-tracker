@@ -9,6 +9,7 @@ import Quest from "../components/Quest";
 import { QUERY_QUEST } from "../utils/queries";
 import QuestList from "../components/QuestList";
 // import { Quest } from "../../../server/models";
+import { createTheme } from "@mui/material/styles";
 
 import Auth from "../utils/auth";
 
@@ -26,10 +27,12 @@ const Profile = () => {
 
   if (!isLoggedIn) {
     return (
-      <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
-      </h4>
+      <div className="logged-warning-div">
+        <h4 className="logged-warning">
+          You need to be logged in to see your profile page. Use the navigation
+          links above to sign up or log in!
+        </h4>
+      </div>
     );
   }
 
@@ -37,9 +40,9 @@ const Profile = () => {
     <div className="quest-page-wrapper">
       <h2 className="card-header mt-4 quest-page-header">Daily Quests</h2>
       <div className="quest-page-button-wrapper">
-        <Button className="quest-page-button" variant="contained" size="small">
+        {/* <Button className="quest-page-button" variant="contained" size="small">
           Generate Today's Quests
-        </Button>
+        </Button> */}
       </div>
       <div className="quest-page-wrapper">
         <QuestList />
