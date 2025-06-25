@@ -13,9 +13,9 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link className="header-title" to="/">
-          <h1 className="header-h1">The Path.</h1>
+          <h1 className="header-h1">Personal Tracker + Challenge System</h1>
         </Link>
-        <p className="header-subtitle">Gamify your life.</p>
+        <p className="header-subtitle">live your life king size</p>
 
         <div>
           {Auth.loggedIn() ? (

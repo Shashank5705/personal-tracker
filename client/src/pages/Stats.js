@@ -94,10 +94,10 @@ const Profile = () => {
             {data.me.daysFromStart} Days From Start
           </h3>
           <h3 className="stats-page-text">
-            {data.me.daysSober} Days Walked the Path{" "}
+            {data.me.daysSober} Days Completed the routine{" "}
           </h3>
           <h3 className="stats-page-text">
-            {data.me.timesRelapsed} Days Strayed from the Path
+            {data.me.timesRelapsed} Days Strayed from the routine
           </h3>
           <h3 className="stats-page-text">
             {data.me.questsCompleted} Quests Completed{" "}
@@ -131,13 +131,13 @@ const Profile = () => {
               onClick={increaseSoberCount}
               className="stats-page-modal-button"
             >
-              I walked the path today
+              I completed the routine today
             </button>
             <button
               onClick={increaseRelapsedCount}
               className="stats-page-modal-button"
             >
-              I strayed from the path today
+              I strayed from the routine today
             </button>
           </div>
         </Modal>

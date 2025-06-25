@@ -24,19 +24,19 @@ const Home = () => {
               <p />
               <p className="home-text">Real life progression isn’t so clear.</p>
               <p className="home-text">
-                'The Path' aims to give you some direction to improve your
+                'This web application' aims to give you some direction to improve your
                 physical and mental health through tracking and encouraging your
                 growth.
               </p>
             </p>
             <p className="home-text">
-              Check in every day to stay on The Path, and complete quests to
+              Check in every day to stay on This web application, and complete quests to
               increase your level, to get harder quests.
             </p>
             <p className="home-text">
               Whether you're somebody recovering from addiction, mental illness,
               or just someone who wants to start forming healthier habits,
-              you're welcome to walk The Path.
+              you're welcome to walk This web application.
             </p>
           </div>
         </div>

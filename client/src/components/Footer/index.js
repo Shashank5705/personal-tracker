@@ -14,14 +14,14 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          &copy; {new Date().getFullYear()} - Made with love by{" "}
+           Made by{" "}
           <a
             className="footer-link"
-            href="https://github.com/Wratten"
+            href="https://github.com/Shashank5705"
             target="_blank"
             rel="noreferrer"
           >
-            Wratten
+            Shiva Kumar
           </a>
         </h4>
       </div>
